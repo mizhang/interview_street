@@ -1,0 +1,33 @@
+ 
+         SOLUTION FOR "Circle_Summation" PROBLEM
+
+	     Mi ( Miya) Zhang
+		Dec 20, 2012
+
+
+*********** DESCRIPTION **************
+
+	This program is a solver for the Circle_Summation
+problem at https://www.interviewstreet.com/challenges
+/dashboard/#problem/4e643a7ebf4f1
+
+	For details of this problem, please refer
+to Problem.doc in the same folder.
+
+
+*********** COMPILING  ****************
+
+	g++ main.cpp -o a.out
+        
+*********** ALGORITHM  ****************
+
+	First, calculate the first round of hands. 
+	Second, calculate the total possible ways of
+jumping N steps, based on step size of 1, number of positions,
+and number of positions -1.  
+	Third, sum of first round hands result times steps
+to the calculated position is the result.
+
+*********** TESTS       ****************
+
+	Result is accepted by interviewstreet.com. 
