@@ -1,0 +1,30 @@
+ 
+         SOLUTION FOR "EQUATIONS" PROBLEM
+
+	     Mi ( Miya) Zhang
+		Dec 20, 2012
+
+
+*********** DESCRIPTION **************
+
+	This program is a solver for the EQUATION
+problem at https://www.interviewstreet.com/challenges
+/dashboard/#problem/4e14a0058572a. 
+
+	For details of this problem, please refer
+to Problem.doc in the same folder.
+
+
+*********** COMPILING  ****************
+
+	g++ main.cpp -o a.out
+        
+*********** ALGORITHM  ****************
+
+	First, factorize the X factorial.
+	Second, result is total times of
+(1 + 2 * number of each prime factor).
+
+*********** TESTS       ****************
+
+	Result is accepted by interviewstreet.com. 
