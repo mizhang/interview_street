@@ -1,0 +1,30 @@
+ 
+         SOLUTION FOR "Even_Tree" PROBLEM
+
+	     Mi ( Miya) Zhang
+		Dec 20, 2012
+
+
+*********** DESCRIPTION **************
+
+	This program is a solver for the Even_Tree 
+problem at https://www.interviewstreet.com/challenges
+/dashboard/#problem/4fffc24df25cd
+
+	For details of this problem, please refer
+to Problem.doc in the same folder.
+
+
+*********** COMPILING  ****************
+
+	g++ main.cpp -o a.out
+        
+*********** ALGORITHM  ****************
+
+	First, factorize the X factorial.
+	Second, result is total times of
+(1 + 2 * number of each prime factor).
+
+*********** TESTS       ****************
+
+	Result is accepted by interviewstreet.com. 
