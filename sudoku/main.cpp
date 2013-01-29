@@ -3,18 +3,17 @@
              mi miya zhang    Dec 4, 2012   
 	
 	This program solves sudoku puzzle based 
-on algorithm computing.  It boosts performance
-by minimizing try_and_error approach. 
+on algorithm computing.  Its performance is 
+maximized by minimizing try_and_error approach. 
 
 	Three rules (that each row, column and 
-square has a non repeating set of numbers from 
+sub_square has a non repeating set of numbers from 
 1-9) are each designed as a class(Row, Column
-and Square, all derived from base Unit class).  
+and Square), all derived from base Unit class.  
 
-	The whole puzzle and its solving is
-stored and handled in the Puzzle class, with
-the component Position class corresponding for
-each grid in the 9*9 puzzle.
+	The Puzzle class is responsible for 
+whole puzzle solving with the help of the three
+rule classes, Row, Column, and Square. 
 
 ******************************************/
 
