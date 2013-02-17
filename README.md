@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 interview_street
 ================
 
@@ -22,3 +23,7 @@ The common theme is algorithm efficiency among those challenges.
    the problem.doc file in the project folder for more details.  Large numbers
    are used in test cases, thus demanding high efficiency of the program.  About 
    1/3 of online submissions are accepted as successful solutions.
+=======
+temp
+====
+>>>>>>> 2414434cac1d61418ab7bfb7314eb190f843a149
