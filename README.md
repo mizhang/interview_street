@@ -8,4 +8,4 @@ C++:
                                    Currently 1/3 submitted programs are accepted as good solutions.
 
 Python: 
-   4. Sudoku_python:               A GUI sudoku game written in Python.
+   4. Sudoku_python:               A GUI sudoku game written in Python (with Pygame library).
