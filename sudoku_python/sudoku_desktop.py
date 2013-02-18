@@ -4,6 +4,7 @@ import pygame, sys
 from pygame.locals import *
 import collections
 
+# set up window size
 WINDOWWIDTH = 560
 WINDOWHEIGHT =540 
 
@@ -19,9 +20,10 @@ Grid_Size = 360
 WHITE = (  255, 255, 255)
 BLACK = (    0,   0,   0)
 
+# List to hold all numbers in each cell
 NUMBERS = [-1] * 81
 
-
+# the button class
 class Button:
     def __init__(self, pos, name_input, surface_screen):
         self.position = pos
@@ -88,7 +90,7 @@ class Button:
         
             
             
-            
+# set up the initial state of the game.            
 def internalGame():
     global NUMBERS, RESULTS
     NUMBERS = [-1, -1, -1,7,5,6,9,-1,2,-1,4,-1,-1,3,1,-1,7,-1,-1,-1,-1,-1,4,-1,-1,1,-1,4,-1,-1,-1,-1,-1, 7,3,1,-1,-1,1,4,9,3,8,-1,-1,6,3,8,-1,-1,-1,-1,-1,9,-1,5,-1,-1,1,-1,-1,-1,-1,-1,2,-1,3,8,-1,-1,6,-1,8,-1,7,6,2,4,-1,-1,-1]
@@ -96,7 +98,7 @@ def internalGame():
     RESULTS = [1, 8,3,7,5,6,9,4,2,2,4,9,8,3,1,6,7,5,7,6,5,2,4,9,3,1,8,4,9,2,5,6,8,7,3,1,5,7,1,4,9,3,8,2,6,6,3,8,1,7,2,4,5,9,3,5,6,9,1,7,2,8,4,9,2,4,3,8,5,1,6,7,8,1,7,6,2,4,5,9,3]
 
 
-
+# set up the window surface 
 def setupWindow():
     global    DISPLAYSURF
     # set up the window
@@ -106,7 +108,8 @@ def setupWindow():
     BASICFONT = pygame.font.Font('freesansbold.ttf',18)
     pygame.display.set_caption('Sudoku')
 
-    
+   
+# draw the whole game grid. 
 def drawGrid():
     pygame.draw.line(DISPLAYSURF, BLACK, Grid_UpperLeft, Grid_UpperRight, 3)
     pygame.draw.line(DISPLAYSURF, BLACK, Grid_UpperLeft, Grid_LowerLeft, 3)
@@ -132,11 +135,14 @@ def drawGrid():
     pygame.draw.line(DISPLAYSURF, BLACK, (100, 380), (460, 380), 1)
     pygame.draw.line(DISPLAYSURF, BLACK, (100, 420), (460, 420), 1)
 
+
+# display all numbers in each cell.
 def showNumbers():
 
     for i in range(81):
         showNumber(i)
 
+# display the number of a specific cell.
 def showNumber(i):
     if NUMBERS[i] < 0: return
     font = pygame.font.Font( None, 36)
@@ -148,20 +154,21 @@ def showNumber(i):
     textpos.centery = START + (column + 0.5) * Grid_Size/9
     DISPLAYSURF.blit(text, textpos)
 
-    
+   
+# from the mouse click position, get to the cell being clicked. 
 def gridClicked( this_pos ):
     
     row = (this_pos[0]-START) *9 / Grid_Size
     column = (this_pos[1] - START) *9 / Grid_Size
     return ('GRID', row*9+column)
     
-
+# exit game when triggured.
 def checkExitCode():
     if EXIT_CODE == 1:
         pygame.quit()
         sys.exit()
 
-
+# check if mouse clicked on any cell or the button. 
 def checkMouse(this_pos):
     global first_button 
 
@@ -177,6 +184,7 @@ def checkMouse(this_pos):
     return (' ', -1)
 
 
+# get the user input on the number for a specific cell.
 def setNumber(current_position, key):
     if   key == K_1: NUMBERS[current_position] = 1
     elif key == K_2: NUMBERS[current_position] = 2
@@ -191,6 +199,8 @@ def setNumber(current_position, key):
     else: return 0
     return 1
 
+
+# the overal setup function
 def setUp():
 
     # Setups
@@ -198,7 +208,9 @@ def setUp():
     showNumbers()    # show numbers
 
     first_button.draw()
-    
+   
+
+# main function for the game. 
 def main():
     global EXIT_CODE
     global first_button
